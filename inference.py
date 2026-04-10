@@ -47,9 +47,9 @@ def _load_dotenv(path: str = ".env") -> None:
 _load_dotenv()
 
 # -- Configuration ---------------------------------------------------------
-API_BASE_URL = os.getenv("API_BASE_URL", "https://router.huggingface.co/v1")
-MODEL_NAME = os.getenv("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")
-HF_TOKEN = os.getenv("HF_TOKEN")
+API_BASE_URL = os.environ.get("API_BASE_URL", "https://router.huggingface.co/v1")
+MODEL_NAME = os.environ.get("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")
+API_KEY = os.environ.get("API_KEY", os.environ.get("HF_TOKEN"))
 ENV_URL = os.getenv("ENV_URL", "https://hype4raj-incident-commander-env.hf.space")
 
 BENCHMARK = "aegisops_ai_incident_response"
@@ -297,7 +297,7 @@ def main() -> None:
     print(f"[DEBUG] API: {API_BASE_URL}", flush=True)
     print(f"[DEBUG] Env: {ENV_URL}", flush=True)
 
-    client = OpenAI(base_url=API_BASE_URL, api_key=HF_TOKEN)
+    client = OpenAI(base_url=API_BASE_URL, api_key=API_KEY)
 
     scores: Dict[str, float] = {}
 
