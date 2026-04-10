@@ -47,10 +47,10 @@ def _load_dotenv(path: str = ".env") -> None:
 _load_dotenv()
 
 # -- Configuration ---------------------------------------------------------
-API_BASE_URL = os.environ.get("API_BASE_URL", "https://router.huggingface.co/v1")
-MODEL_NAME = os.environ.get("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")
+API_BASE_URL = os.environ.get("API_BASE_URL", "https://openrouter.ai/api/v1")
+MODEL_NAME = os.environ.get("MODEL_NAME", "qwen/qwen-2.5-72b-instruct")
 API_KEY = os.environ.get("API_KEY", os.environ.get("HF_TOKEN"))
-ENV_URL = os.getenv("ENV_URL", "https://hype4raj-incident-commander-env.hf.space")
+ENV_URL = os.getenv("ENV_URL", "https://shrishtisonkar-meta-team-technovators.hf.space")
 
 BENCHMARK = "aegisops_ai_incident_response"
 TASKS = ["oom_crash", "db_pool_exhaustion", "bad_deployment_cascade"]
