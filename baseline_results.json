@@ -1,0 +1,25 @@
+{
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "provider": "OpenRouter",
+  "tasks": {
+    "oom_crash": {
+      "task_id": "oom_crash",
+      "score": 0.99,
+      "steps_used": 4,
+      "resolved": true
+    },
+    "db_pool_exhaustion": {
+      "task_id": "db_pool_exhaustion",
+      "score": 0.8,
+      "steps_used": 25,
+      "resolved": false
+    },
+    "bad_deployment_cascade": {
+      "task_id": "bad_deployment_cascade",
+      "score": 0.99,
+      "steps_used": 18,
+      "resolved": true
+    }
+  },
+  "average_score": 0.9267
+}
